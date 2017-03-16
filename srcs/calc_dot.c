@@ -18,7 +18,7 @@ static t_point	*get_line(int size, int index, int *alpha)
 	int			i;
 
 	i = 0;
-	nbr = ft_memalloc(sizeof(t_point) * (size + 11500));
+	nbr = (t_point*)malloc(sizeof(t_point) * (size + 1));
 	while (i < size - 1)
 	{
 		nbr[i].x = i;
@@ -35,7 +35,7 @@ t_point			**get_map(int endl, int len, int **alpha)
 	int			index;
 
 	index = 0;
-	ret = ft_memalloc(sizeof(t_point**) * (endl + 11500));
+	ret = (t_point**)malloc(sizeof(t_point*) * (endl + 1));
 	while (index < endl)
 	{
 		ret[index] = get_line(len, index, alpha[index]);
