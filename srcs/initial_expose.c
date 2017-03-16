@@ -36,7 +36,7 @@ static t_newpos		*get_pos_endl(int size, t_point *data)
 	int				index;
 
 	index = 0;
-	ret = ft_memalloc(sizeof(t_newpos*) * (size + 11500));
+	ret = (t_newpos*)malloc(sizeof(t_newpos) * (size + 1));
 	while (index < size)
 	{
 		ret[index] = dot_in_win(size, data[index]);
@@ -51,7 +51,7 @@ t_newpos			**get_pos_data(int endl, int size, t_point **data)
 	int				index;
 
 	index = 0;
-	ret = ft_memalloc(sizeof(t_newpos**) * (endl + 15500));
+	ret = (t_newpos**)malloc(sizeof(t_newpos*) * (endl + 1));
 	while (index < endl)
 	{
 		ret[index] = get_pos_endl(size, data[index]);
